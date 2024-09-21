@@ -3,39 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
     <title>Alex's Weather App</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city" />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>Barcelona</h1>
-        <p>
-          Tuesday 14:58, scattered clouds <br />
-          Humidity: 66%, Wind: 3.13 km/h
-        </p>
-      </div>
-      <div>🌥️ 12 degrees</div>
-    </main>
-
-    <footer>
-      This project was coded by
-      <a href="https://github.com/alexandrabeep" target="_blank"
-        >Alexandra Ufenast Smolders</a
-      >
-      on
-      <a
-        href="https://github.com/alexandrabeep/weather-app-project"
-        target="_blank"
-        >GitHub</a
-      >
-      and hosted by
-      <a href="https://weatherdotcom.netlify.app/" target="_blank">Netlify</a>
-    </footer>
+    <div class="weather-block">
+      <header>
+        <form>
+          <input type="search" placeholder="Enter a city" />
+          <input type="submit" value="Search" />
+        </form>
+      </header>
+      <main>
+        <div>
+          <h1>Barcelona</h1>
+          <p>
+            Tuesday 14:58, scattered clouds <br />
+            Humidity: 66%, Wind: 3.13 km/h
+          </p>
+        </div>
+        <div>🌥️ 12 degrees</div>
+      </main>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/alexandrabeep" target="_blank"
+          >Alexandra Ufenast Smolders</a
+        >
+        on
+        <a
+          href="https://github.com/alexandrabeep/weather-app-project"
+          target="_blank"
+          >GitHub</a
+        >
+        and hosted by
+        <a href="https://weatherdotcom.netlify.app/" target="_blank">Netlify</a>
+      </footer>
+    </div>
   </body>
 </html>
