@@ -15,10 +15,11 @@
   <body>
     <div class="weather-block">
       <header>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city"
+            id="search-form-input"
             class="search-form-input"
           />
           <input type="submit" value="Search" class="search-form-button" />
@@ -27,7 +28,7 @@
       <main>
         <div class="weather-app-data">
           <div>
-            <h1 class="weather-app-city">Barcelona</h1>
+            <h1 id="city" class="weather-app-city">Barcelona</h1>
             <p class="weather-app-details">
               Tuesday 14:58, scattered clouds <br />
               Humidity: <strong> 66%</strong>, Wind: <strong>3.13 km/h</strong>
@@ -55,6 +56,6 @@
         <a href="https://weatherdotcom.netlify.app/" target="_blank">Netlify</a>
       </footer>
     </div>
-    <script src="src/index.js"></script>
+    <script src="src/script.js"></script>
   </body>
 </html>
