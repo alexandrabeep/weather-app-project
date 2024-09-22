@@ -1,11 +1,46 @@
-// Retrieve data
+// Retrieve data and present it in HTML
 function retrieveWeather(response) {
   let temperatureElement = document.querySelector("#today-temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description-today");
+
+  let humidityElement = document.querySelector("#humidity-today");
+  let humidity = response.data.temperature.humidity;
+
+  let windElement = document.querySelector("#wind-today");
+  let windSpeed = response.data.wind.speed;
+
+  let date = new Date(response.data.time * 1000);
+  let timeElement = document.querySelector("#time");
 
   cityElement.innerHTML = response.data.city;
+  timeElement.innerHTML = getDate(date);
   temperatureElement.innerHTML = Math.round(temperature);
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = `${humidity} %`;
+  windElement.innerHTML = `${windSpeed} km/h`;
+}
+
+function getDate(date) {
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+
+  let weekDay = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = weekDay[date.getDay()];
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${day} ${hours}:${minutes}`;
 }
 
 // make API call
