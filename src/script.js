@@ -2,6 +2,7 @@
 function retrieveWeather(response) {
   let temperatureElement = document.querySelector("#today-temperature");
   let temperature = response.data.temperature.current;
+
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description-today");
 
@@ -14,14 +15,17 @@ function retrieveWeather(response) {
   let date = new Date(response.data.time * 1000);
   let timeElement = document.querySelector("#time");
 
+  let iconElement = document.querySelector("#icon");
+
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = getDate(date);
   temperatureElement.innerHTML = Math.round(temperature);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${humidity} %`;
   windElement.innerHTML = `${windSpeed} km/h`;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
-
+//format date
 function getDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
