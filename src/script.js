@@ -62,5 +62,32 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+//display forecast
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHTML = "";
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="weather-forecast-day">
+    <div class="weather-forecast-date">${day}</div>
+            <div class="weather-forecast-icon">EMOJI</div>
+            <div class="weather-forecast-temperatures">
+              <div class="weather-forecast-temperature">
+                <strong>15°C</strong>
+              </div>
+              <div class="weather-forecast-temperature">9°C</div>
+            </div>
+          </div>`;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
+
+searchCity("Kuala Lumpur");
+
+displayForecast();
