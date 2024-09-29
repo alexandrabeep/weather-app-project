@@ -45,7 +45,6 @@ function getDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -107,6 +106,14 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHTML;
 }
+// Night mode
+function changeTheme() {
+  let body = document.querySelector("body");
+
+  body.classList.toggle("dark");
+}
+let themeButton = document.querySelector("button");
+themeButton.addEventListener("click", changeTheme);
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
